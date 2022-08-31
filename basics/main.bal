@@ -315,6 +315,14 @@ function onAnyType() {
 
 }
 
+function onIgnoreReturn(int a) returns int|error{
+    if a<0{
+        return error("Got -ve value!!!");
+    }
+
+    return a*a;
+}
+
 public function main() {
     int? optional = ();
 
@@ -347,5 +355,11 @@ public function main() {
 
     //onUnion();
     //io:println("Got error|int;----- ",onError(100,2));
-    onAnyType();
+    //onAnyType();
+
+
+
+    //checkpanic used to terminate program (panic) if it returns error
+    // else _ to ignore return value 
+    _ = checkpanic onIgnoreReturn(5);
 }
