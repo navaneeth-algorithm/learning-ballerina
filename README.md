@@ -186,4 +186,16 @@ int n = a[2]
 
 ### `any` type
 - can store any type of value
+- [code](basics/main.bal#L280)
+
+
+### Ignoring error and Return value
+
+- Function which returns value or error must be assigned otherwise it throws error.
+- returned `value` can by bypassed by assigning to `_` symbol;
+
+- if `error` type is returned , it has to be explicitly handled otherwise we can use `checkpanic` which `panic` on error rather than returning.
+
+- [code](basics/main.bal#L318)
+
 
