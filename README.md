@@ -165,6 +165,17 @@ int n = a[2]
 - A `record` is a collection of fields of a specific type. With record types, you have control over what your **keys** are
 - `record` are mutable.
 
+- if varaible name & the key reside in the record name are same , we can ignore key while assigning.
+Eg:
+   ```
+   int x=10;int y=11;
+   record {int x;int y;} one = {x:x,y:y};
+
+   //can also be written as
+
+   record {int x;int y;} two = {x,y};
+   ```
+
 - check [code](basics/main.bal#L170) 
 
 
@@ -199,3 +210,75 @@ int n = a[2]
 - [code](basics/main.bal#L318)
 
 
+### Covariance
+- [check URL](https://ballerina.io/learn/language-basics/#covariance)
+
+
+
+
+
+### Class & Object
+
+- `class` keyword used to create class
+
+- `init` method used as constructor
+
+- `self` is used to reference current Object
+
+- `init` method can return type which should be union of `error` & `nil`
+
+- if `init()` calls normally , then constructor object is returned else new expression returns error value
+
+- The return type of the `init()` method is `nil` if a return type is not explicitly specified. It also means that the init method will never return an error.
+
+- obj identity can be found by `!==` & `===` operator. since objject resides memory, it used to check identity of memory of object
+
+
+### `const` and `final`
+
+-  `const` variables are compile time variable, whose value cannot be changed
+
+- `final` are run time variable , once initialised then its value cannot be changed.
+
+-  `const` declaration allowed at module level
+
+
+### Enumeration
+
+- `enum` keyword used to create list of constants
+
+### `match`
+
+- `match` act as switch statement
+
+- check [code](basics/objectOriented.bal#L23)
+
+### Functional Programming
+- check documentation
+
+
+### Asynchronous Programming
+
+- `start`,`wait`,`future` are the keywords used in asynchronous programming
+
+- `start` used in function or method to indicate it is asynchronous
+
+- `wait` used to wait for the asynchronous function or method
+
+
+- `future<T>` returns `T|error` after `wait`
+
+- waiting on the same **`future`** returns error
+
+- check [code](basics/objectOriented.bal#L112)
+
+
+
+### Documentation
+
+- Markdown documentation
+
+- starts with `#`
+- `+` variable_name `-`
+- `+` return `-` 
+- check [code](basics/objectOriented.bal#L98) 

@@ -1,5 +1,6 @@
 import ballerina/io;
 
+
 function validation(boolean value) {
     if (value) {
         io:println("Valid success");
@@ -323,7 +324,7 @@ function onIgnoreReturn(int a) returns int|error{
     return a*a;
 }
 
-public function main() {
+public function main() returns error?{
     int? optional = ();
 
     string aString = "hello";
@@ -361,5 +362,7 @@ public function main() {
 
     //checkpanic used to terminate program (panic) if it returns error
     // else _ to ignore return value 
-    _ = checkpanic onIgnoreReturn(5);
+   // _ = checkpanic onIgnoreReturn(5);
+
+   _ = check onObjectOriented();
 }
